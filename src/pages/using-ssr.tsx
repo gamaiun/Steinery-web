@@ -25,7 +25,6 @@ const UsingSSR = ({ serverData }) => {
         <a href="https://www.gatsbyjs.com/docs/reference/rendering-options/server-side-rendering/">
           documentation about Server Side Rendering
         </a>
-        .
       </p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
