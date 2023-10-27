@@ -6,6 +6,7 @@ import CourseCard from "../components/cards/CourseCard"
 import GridSection from "../components/sections/GridSection"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import WaveBackground from "../components/backgrounds/WaveBackground"
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCourse.edges[0].node.title
@@ -20,6 +21,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="STEINERY" />
+      <WaveBackground />
       <Wrapper>
         <HeroWrapper>
           <CourseCard illustration={illustration} />
@@ -80,7 +82,7 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  /* background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%); */
 `
 const Logo = styled.img`
   width: 60px;

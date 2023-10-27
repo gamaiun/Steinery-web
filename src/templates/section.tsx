@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SectionContent from "../components/sections/SectionContent"
 import Seo from "../components/seo"
+import WaveBackground from "../components/backgrounds/WaveBackground"
 function Section(props) {
   const { data } = props
   const sectionData = data.contentfulSection
@@ -12,6 +13,7 @@ function Section(props) {
   return (
     <Layout>
       <Seo title={sectionData.title} description={sectionData.description} />
+      <WaveBackground />
       <Wrapper>
         <HeroWrapper>
           <Illustration
@@ -52,7 +54,7 @@ export const sectionQuery = graphql`
 
 const Wrapper = styled.div`
   display: grid;
-  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  /* background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%); */
   justify-content: center;
   text-align: center;
 `
