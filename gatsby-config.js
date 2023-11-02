@@ -13,11 +13,11 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Steinery dinnerware`,
-    description: `Learn design and code.`,
+    title: `Cornfield`,
+    description: `Commodity Trading Research`,
     author: `@MyDesign`,
     // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-    keywords: `react, Vlady, tutorials`,
+    keywords: `corn, commodity, trading, trading code, commodity research`,
     image:
       "https://searchengineland.com/wp-content/seloads/2017/01/devtools-search-canonical-800x495.png",
   },
@@ -61,7 +61,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/logos/logo.svg`, // This path is relative to the root of the site.
+        icon: `static/images/logos/corn-logo.png`, // This path is relative to the root of the site.
       },
     },
     // `gatsby-plugin-gatsby-cloud`,

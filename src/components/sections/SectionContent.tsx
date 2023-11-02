@@ -12,22 +12,24 @@ function SectionContent(props) {
 export default SectionContent
 
 const Wrapper = styled.div`
-  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 140%;
-  max-width: 712px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: start;
-  padding: 0px 20px 100px;
+  padding: 50px 20px;
+  color: #010953;
+  text-align: justify;
 
-  @media (max-width: 414px) {
-    font-size: 17px;
+  @media (max-width: 780px) {
+    max-width: 470px;
+    font-size: 18px;
   }
 
-  img,
   video {
     margin: 20px 0;
     width: 100%;
@@ -45,27 +47,46 @@ const Wrapper = styled.div`
   }
 
   h2 {
-    padding: 20px 0;
-    font-size: 32px;
-    line-height: 120%;
-  }
-
-  h3 {
-    padding: 20px 0 0;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 500;
-    opacity: 0.7;
-  }
-
-  h2,
-  h3 {
-    margin-top: 50px;
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.9em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0 20px;
+    color: rgba(50, 82, 185, 0.839);
   }
 
   p {
-    text-align: left;
-    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h3 {
+    padding: 15px 0 0;
+    font-size: 25px;
+    /* text-transform: uppercase; */
+    font-weight: 700;
+    opacity: 0.9;
+    margin-top: 50px;
+  }
+
+  h4 {
+    /* padding: 10px 0 0; */
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 900;
+    /* opacity: 0.9; */
+    /* margin-top: 50px; */
   }
 
   a {

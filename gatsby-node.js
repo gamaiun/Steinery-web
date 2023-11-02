@@ -4,12 +4,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const sectionTemplate = path.resolve(`src/templates/section.tsx`)
   const result = await graphql(`
     {
-      allContentfulCourse {
+      allContentfulCornfieldFront {
         edges {
           node {
             title
             description
-            sections {
+            section {
               slug
             }
           }
@@ -18,7 +18,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const sections = result.data.allContentfulCourse.edges[0].node.sections
+  const sections = result.data.allContentfulCornfieldFront.edges[0].node.section
+
   sections.forEach(section => {
     createPage({
       path: `${section.slug}`,

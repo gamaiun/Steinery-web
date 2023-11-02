@@ -11,7 +11,7 @@ function SectionRow(props) {
         <ProgressBar />
         <Description>{description}</Description>
       </TextWrapper>
-      <Timestamp>{timestamp}</Timestamp>
+      {/* <Timestamp>{timestamp}</Timestamp> */}
     </Wrapper>
   )
 }
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 36px auto;
   gap: 10px;
-  max-width: 370px;
+  max-width: 100%;
   padding: 10px;
   background-blend-mode: overlay;
   mix-blend-mode: normal;

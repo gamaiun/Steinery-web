@@ -7,43 +7,51 @@ import GridSection from "../components/sections/GridSection"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
+import Footer from "../components/footer"
 
 const IndexPage = ({ data }) => {
-  const title = data.allContentfulCourse.edges[0].node.title
+  const title = data.allContentfulCornfieldFront.edges[0].node.title
 
-  const description = data.allContentfulCourse.edges[0].node.description
+  const description = data.allContentfulCornfieldFront.edges[0].node.description
 
-  const illustration =
-    data.allContentfulCourse.nodes[0]?.illustration?.file?.url
+  // const illustration =
+  //   data.allContentfulCornfieldFront.edges[0].node?.illustrationMain.url
 
-  const sections = data.allContentfulCourse.edges[0].node.sections
+  const sections = data.allContentfulCornfieldFront.edges[0].node.section
 
   return (
     <Layout>
-      <Seo title="STEINERY" />
+      <Seo title="CORNFIELD" />
       <WaveBackground />
       <Wrapper>
         <HeroWrapper>
-          <CourseCard illustration={illustration} />
+          <Illustration
+            src="/images/contentful/corn-main.png"
+            alt="illustration"
+          />
+          {/* <CourseCard illustration={illustration} /> */}
           <TextWrapper>
-            <Logo src="/images/logos/react-logo.svg" alt="icon" />
             <Title>{title}</Title>
-            <Caption>20sections 3 hours</Caption>
+            {/* <Caption>20sections 3 hours</Caption> */}
             <Description>{description}</Description>
-            <AuthorWrapper>
-              <AvatarImage src="/images/avatars/Meng.png" alt="avatar" />
-              <Caption>Taught by Meng To</Caption>
-            </AuthorWrapper>
-            <PurchaseButton />
-            <SmallText>
+            {/* 
+            <PurchaseButton /> */}
+            {/* <SmallText>
               Purchase includes access to 30 courses. Over 80 hours of content,
               including 12 hours for SwiftUI, for iOS 13 and iOS 14.
-            </SmallText>
+            </SmallText> */}
           </TextWrapper>
         </HeroWrapper>
-
-        <Divider />
+        {/* <Divider /> */}
         <GridSection sections={sections} />
+        <ButtonWrapper>
+          {/* <AuthorWrapper>
+            <AvatarImage src="/images/avatars/Meng.png" alt="avatar" />
+            <Caption>Created by Gamaiun</Caption>
+          </AuthorWrapper>{" "} */}
+          <PurchaseButton />
+        </ButtonWrapper>
+        <Footer />
       </Wrapper>
     </Layout>
   )
@@ -52,28 +60,18 @@ export default IndexPage
 
 export const query = graphql`
   query MyQuery {
-    allContentfulCourse {
+    allContentfulCornfieldFront {
       edges {
         node {
           title
           description
-          sections {
-            duration
-            description
-            title
-            slug
-            illustration {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-      nodes {
-        illustration {
-          file {
+          illustrationMain {
             url
+          }
+          section {
+            slug
+            title
+            description
           }
         }
       }
@@ -82,43 +80,68 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  /* background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%); */
+  background: linear-gradient(180.44deg, #6494e9 20.57%, #e6e2f2 50.38%);
 `
-const Logo = styled.img`
-  width: 60px;
-  height: 60px;
-`
-const Title = styled.h1`
+// const Logo = styled.img`
+//   width: 60px;
+//   height: 60px;
+// `
+const Title = styled.h4`
   max-width: 500px;
+  max-height: 100px;
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
-  line-height: 72px;
-  color: #ffffff;
+  font-size: 40px;
+  /* line-height: 72px; */
+  color: #f5ecbb;
   mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 `
 
-const Caption = styled.p`
-  font-style: normal;
-  font-size: 15px;
-  line-height: 130%;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-`
+// const Caption = styled.p`
+//   font-style: normal;
+//   font-size: 15px;
+//   line-height: 130%;
+//   text-transform: uppercase;
+//   color: rgba(27, 0, 0, 0.7);
+// `
 
 const Description = styled.p`
-  max-width: 400px;
+  max-width: auto;
   font-style: normal;
   font-size: 20px;
   line-height: 140%;
-  color: #ffffff;
+  color: #3c437e;
+  text-align: justify;
+  text-align: start;
 `
 
 const TextWrapper = styled.div`
   position: relative;
   display: grid;
   gap: 20px;
+  grid-template-rows: auto auto; /* Two rows: one for title, one for description */
+  padding-top: 40px;
+
+  // Align grid items to start (top) of each row
+  align-content: start;
+
+  // Text Wrapper
+  @media (max-width: 780px) {
+    padding-top: 0px;
+    gap: 35px;
+    /* justify-items: center; */
+    /* text-align: center; */
+  }
+`
+
+const ButtonWrapper = styled.div`
+  position: relative;
+  display: grid;
+  padding-top: 50px;
+  gap: 0px;
+  justify-items: center;
+  text-align: center;
 
   // Text Wrapper
   @media (max-width: 780px) {
@@ -127,46 +150,71 @@ const TextWrapper = styled.div`
   }
 `
 
-const AuthorWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`
+// const AuthorWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 16px;
+// `
 
-const AvatarImage = styled.img`
-  width: 32px;
-  height: 32px;
-`
+// const AvatarImage = styled.img`
+//   width: 32px;
+//   height: 32px;
+// `
 
-const SmallText = styled.p`
-  max-width: 280px;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 130%;
-  color: rgba(255, 255, 255, 0.7);
-`
+// const SmallText = styled.p`
+//   max-width: 280px;
+//   font-style: normal;
+//   font-size: 13px;
+//   line-height: 130%;
+//   color: rgba(5, 3, 0, 0.9);
+// `
 const HeroWrapper = styled.div`
   display: grid;
   max-width: 1234px;
-  grid-template-columns: 360px auto;
-  gap: 60px;
-  padding: 220px 20px 0px;
-  justify-content: center;
+  grid-template-columns: 350px auto;
+  gap: 70px;
+  padding: 150px 30px 0px;
+  justify-content: start;
   margin: 0 auto;
 
   .courseCard {
-    margin-top: 39px;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 990px) {
+    gap: 30px;
   }
 
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
+    padding: 130px 30px 0px;
     justify-items: center;
   }
 `
 
-const Divider = styled.div`
-  width: 300px;
-  height: 0.5px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 60px auto 32px;
+// const Divider = styled.div`
+//   width: 300px;
+//   height: 0.5px;
+//   background: rgba(0, 0, 0, 0.3);
+//   margin: 20px auto 0px;
+// `
+
+const Illustration = styled.img`
+  padding-top: 0px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  grid-template-columns: 350px auto;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  padding: 10px;
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 50%; /* Set maximum width to 80% when the screen width is 780px or less */
+    padding: 0px;
+  }
 `

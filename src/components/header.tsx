@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <Wrapper>
       <MyLink to="/">
-        <img src="/images/logos/logo.svg" alt="Logo" />
+        <img src="/images/logos/cornfield_logo.png" alt="Logo" />
       </MyLink>
       <MenuWrapper count={menuData.length} ref={ref}>
         {menuData.map((item, index) =>
@@ -68,7 +68,7 @@ export default function Header() {
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 60px;
+  top: 30px;
   display: grid;
   grid-template-columns: 44px auto;
   width: 100%;

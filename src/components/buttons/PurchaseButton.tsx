@@ -5,12 +5,15 @@ function PurchaseButton() {
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon src="/images/icons/credit.svg" alt="button_icon_alt" />
-        <Ring src="/images/icons/icon-ring.svg" alt="button_ring_alt" />
+        <Icon
+          src="/images/logos/cornfield_logo_white.png"
+          alt="button_icon_alt"
+        />
+        {/* <Ring src="/images/icons/icon-ring.svg" alt="button_ring_alt" /> */}
       </IconWrapper>
       <TextWrapper>
-        <Title>Get Pro Access</Title>
-        <Subtitle>$19 per month</Subtitle>
+        <Title>Subscribe</Title>
+        <Subtitle>to our monthly newsletter</Subtitle>
       </TextWrapper>
     </Wrapper>
   )
@@ -22,7 +25,7 @@ const Wrapper = styled.div`
   width: 280px;
   height: 77px;
   padding: 12px;
-  background: linear-gradient(180deg, #ffffff 0%, #d9dfff 100%);
+  background: linear-gradient(180deg, #c0cffc 40%, #98aeff 100%);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
     0px 20px 40px rgba(23, 0, 102, 0.2),
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
@@ -59,7 +62,7 @@ const Title = styled.p`
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
-  color: black;
+  color: #4a67c6;
   text-transform: uppercase;
 `
 
@@ -72,8 +75,11 @@ const Subtitle = styled.p`
 `
 
 const Icon = styled.img`
-  width: 29px;
-  height: 29px;
+  width: 45px;
+  height: 45px;
+  ${Wrapper}:hover & {
+    transform: rotate(45deg) scale(1.2) translate(1px, 1px);
+  }
 `
 
 const Ring = styled.img`
@@ -89,7 +95,7 @@ const Ring = styled.img`
 const IconWrapper = styled.div`
   width: 45px;
   height: 45px;
-  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  /* background: linear-gradient(200.44deg, #f1eeb3 13.57%, #ffffff 98.38%); */
   border-radius: 50%;
   display: grid;
   justify-content: center;
@@ -98,6 +104,6 @@ const IconWrapper = styled.div`
   position: relative;
 
   ${Wrapper}:hover & {
-    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    filter: hue-rotate(10deg) brightness(180%) saturate(0%);
   }
 `

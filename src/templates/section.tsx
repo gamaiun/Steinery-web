@@ -5,26 +5,35 @@ import Layout from "../components/layout"
 import SectionContent from "../components/sections/SectionContent"
 import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
+import GridSection from "../components/sections/GridSection"
+import Footer from "../components/footer"
 function Section(props) {
   const { data } = props
-  const sectionData = data.contentfulSection
+  const sectionData = data.contentfulCornfieldPages
   const markdown = sectionData.content.childMarkdownRemark
-  // console.log(markdown)
+
+  const sections = data.allContentfulCornfieldFront.edges[0].node.section
+
+  console.log(data)
   return (
     <Layout>
-      <Seo title={sectionData.title} description={sectionData.description} />
+      <Seo title="CORNFIELD" />
       <WaveBackground />
       <Wrapper>
         <HeroWrapper>
           <Illustration
-            src={sectionData.illustration.file.url}
+            src={sectionData.pageIllustration.url}
             alt="illustration"
           />
-          <Title>{sectionData.title}</Title>
-          <Description>{sectionData.description}</Description>
+          <TextWrapper>
+            <Title>{sectionData.title}</Title>
+            <Description>{sectionData.description}</Description>
+          </TextWrapper>
         </HeroWrapper>
+        <SectionContent {...markdown} />
+        <GridSection sections={sections} />
+        <Footer />
       </Wrapper>
-      <SectionContent {...markdown} />
     </Layout>
   )
 }
@@ -32,66 +41,117 @@ function Section(props) {
 export default Section
 
 export const sectionQuery = graphql`
-  query SectionQuery($slug: String!) {
-    contentfulSection(slug: { eq: $slug }) {
-      title
-      description
-      duration
-      slug
-      illustration {
-        file {
-          url
+  #
+
+  query allContentfulCornfieldFrontAndSectionQuery($slug: String!) {
+    allContentfulCornfieldFront {
+      edges {
+        node {
+          title
+          description
+
+          section {
+            slug
+            title
+          }
         }
       }
+    }
+
+    contentfulCornfieldPages(slug: { eq: $slug }) {
       content {
         childMarkdownRemark {
           htmlAst
         }
       }
+      title
+      pageIllustration {
+        url
+      }
+      description
+      slug
     }
   }
 `
 
 const Wrapper = styled.div`
-  display: grid;
-  /* background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%); */
-  justify-content: center;
-  text-align: center;
-`
-
-const HeroWrapper = styled.div`
-  display: grid;
-  gap: 20px;
-  max-width: 1234px;
-  margin: 0 auto;
-  padding: 0 20px;
-`
-
-const Illustration = styled.img`
-  padding-top: 140px;
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
+  background: linear-gradient(220.44deg, #6494e9 3.57%, #ffffff 98.38%);
 `
 
 const Title = styled.h1`
   max-width: 500px;
-  margin: 0 auto;
+  padding-top: 40px;
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
-  line-height: 72px;
-  color: #ffffff;
+  font-size: 50px;
+  line-height: 52px;
+  color: #e8d9ff;
   mix-blend-mode: normal;
-  text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+`
+const Illustration = styled.img`
+  padding-top: 0px;
+  max-width: 120%;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: 380px auto;
+  position: relative;
+  display: grid;
+  width: 350px;
+  overflow: hidden;
 `
 
 const Description = styled.p`
-  max-width: 600px;
-  margin: 0 auto;
-  font-style: normal;
+  max-width: 400px;
+  font-style: italic;
   font-size: 20px;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.7);
-  mix-blend-mode: normal;
+  color: #cad5fe;
+  padding-top: 10%;
+  text-align: justify;
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    justify-items: center;
+    padding-bottom: 10%;
+  }
 `
+
+const TextWrapper = styled.div`
+  position: relative;
+  /* display: grid; */
+  gap: 0px;
+
+  // Text Wrapper
+  @media (max-width: 800px) {
+    justify-items: center;
+    text-align: center;
+  }
+`
+
+const HeroWrapper = styled.div`
+  display: grid;
+  max-width: 1234px;
+  grid-template-columns: 360px auto;
+  gap: 20px;
+  padding: 160px 20px 0px;
+  justify-content: center;
+  margin: 0 auto;
+
+  .courseCard {
+    margin-top: 0px;
+  }
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+`
+
+// const IndexPage = ({ data }) => {
+//   const title = data.allContentfulCornfieldFront.edges[0].node.title
+//   const description = data.allContentfulCornfieldFront.edges[0].node.description
+//   const sections = data.allContentfulCornfieldFront.edges[0].node.section

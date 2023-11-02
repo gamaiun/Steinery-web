@@ -6,9 +6,9 @@ function CourseCard(props) {
   const { illustration } = props
   return (
     <Wrapper className="courseCard">
-      <AnimationWrapper>
+      {/* <AnimationWrapper>
         <Circles />
-      </AnimationWrapper>
+      </AnimationWrapper> */}
       <Illustration src={illustration} alt="illustration" />
     </Wrapper>
   )
@@ -19,11 +19,12 @@ export default CourseCard
 const Wrapper = styled.div`
   position: relative;
   display: grid;
+  overflow: hidden;
 
   max-width: 320px;
   width: 100%;
   height: 480px;
-  background: linear-gradient(200.42deg, #ff8570 13.57%, #f9504a 98.35%);
+  background: linear-gradient(200.42deg, #ff6969 50.57%, #f7ff14 98.35%);
   border-radius: 20px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25),
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.25);
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
 
 const Illustration = styled.img`
   width: 300px;
-  height: 225px;
+  height: 340px;
 `
 const AnimationWrapper = styled.div`
   position: absolute;
