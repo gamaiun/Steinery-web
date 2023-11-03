@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
