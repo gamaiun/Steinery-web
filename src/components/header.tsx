@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <Wrapper>
       <MyLink to="/">
-        <img src="/images/logos/cornfield_logo.png" alt="Logo" />
+        <img src="/images/logos/cornfield_logo.webp" alt="Logo" />
       </MyLink>
       <MenuWrapper count={menuData.length} ref={ref}>
         {menuData.map((item, index) =>

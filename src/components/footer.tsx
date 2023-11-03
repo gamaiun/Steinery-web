@@ -17,7 +17,7 @@ const Footer = () => {
         />
         {/* <Caption>Created by Gamaiun</Caption> */}
       </AuthorWrapper>
-      <Wave src="/images/waves/footer-wave3.svg" />
+      <Wave src="/images/waves/footer-wave3.svg" alt="footer" />
     </Wrapper>
   )
 }
@@ -41,7 +41,9 @@ const Text = styled.div`
 const Wave = styled.img`
   position: relative;
   width: 100%;
-  max-height: 250px;
+  /* max-height: 250px; */
+  height: 250px;
+
   z-index: 1;
   /* mix-blend-mode: multiply; */
 `
@@ -68,6 +70,5 @@ const AuthorWrapper = styled.div`
 
 const AvatarImage = styled.img`
   width: 150px;
-
-  /* height: 32px; */
+  height: 32px;
 `

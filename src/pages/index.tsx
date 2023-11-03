@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
       <Wrapper>
         <HeroWrapper>
           <Illustration
-            src="/images/contentful/corn-main.png"
+            src="/images/contentful/corn-main.webp"
             alt="illustration"
           />
           {/* <CourseCard illustration={illustration} /> */}
@@ -201,9 +201,9 @@ const HeroWrapper = styled.div`
 
 const Illustration = styled.img`
   padding-top: 0px;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  width: 350px;
+  height: 350px;
   margin: 0 auto;
   grid-template-columns: 350px auto;
   position: relative;
@@ -214,7 +214,9 @@ const Illustration = styled.img`
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
     justify-items: center;
-    max-width: 50%; /* Set maximum width to 80% when the screen width is 780px or less */
+    width: 250px;
+    height: 250px;
+    /* max-width: 50%; /* Set maximum width to 80% when the screen width is 780px or less */
     padding: 0px;
   }
 `

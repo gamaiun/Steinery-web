@@ -25,30 +25,18 @@ const Aboutpage = ({ data }) => {
 
         <Wrapper>
           <HeroWrapper>
-            <Title> About</Title>
+            <Title> Tutorials</Title>
             <Text>
-              This website stands as an ongoing personal project, where the
-              worlds of agricultural commodity trading, data analysis,
-              full-stack development, design, and web scraping converge.
-              <br></br> <br></br> Here, you'll find a project in progress— a
-              systematic exploration of agricultural data scraping, analysis and
-              code examples. As I find more materials and learn new tools - I
-              will add them to this website, which I use as my personal how-to
-              online library.
-              <br></br>
-              <br></br>
-              While the insights shared here are freely given, I urge you to
-              approach them critically. Engage in your own research, validate
-              our findings, and nurture your analytical skills. In the volatile
-              realm of agricultural commodities, trust is earned through
-              meticulous scrutiny. Your expertise and intuition are invaluable
-              assets. I invite you to bring your unique perspective and industry
-              knowledge to enrich the discourse.
-              <br></br>
-              <br></br>
-              <h2>About the website</h2>I used Gatsby and styled-components to
-              code/design this website. All the text materials and images are
-              dynamic and fetched using CMS Contentful storage.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+              fugiat iusto fuga praesentium optio, eaque rerum! Provident
+              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+              eius earum ut molestias architecto voluptate aliquam nihil,
+              eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+              tenetur error, harum nesciunt ipsum debitis quas aliquid.
+              Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa
+              laudantium molestias eos
               <br></br>
               <br></br>
               Gamaiun
