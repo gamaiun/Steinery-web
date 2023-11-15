@@ -11,7 +11,7 @@ function SectionRow(props) {
         <ProgressBar />
         <Description>{description}</Description>
       </TextWrapper>
-      {/* <Timestamp>{timestamp}</Timestamp> */}
+      <Timestamp>{timestamp}</Timestamp>
     </Wrapper>
   )
 }

@@ -16,7 +16,7 @@ function GridSection(props) {
               index={index + 1}
               title={section.title}
               description={section.description}
-              timestamp="" //{section.duration}
+              timestamp={new Date().toLocaleDateString()}
             />
           </Link>
         ))}

@@ -7,11 +7,11 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import GridSection from "../components/sections/GridSection"
 import Footer from "../components/footer"
+
 function Section(props) {
   const { data } = props
   const sectionData = data.contentfulCornfieldPages
   const markdown = sectionData.content.childMarkdownRemark
-
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
 
   console.log(data)
