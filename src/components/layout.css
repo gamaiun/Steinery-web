@@ -7,8 +7,6 @@ span,
 applet,
 object,
 iframe,
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -34,14 +32,12 @@ s,
 samp,
 small,
 strike,
-strong,
 sub,
 sup,
 tt,
 var,
 b,
 u,
-i,
 center,
 dl,
 dt,
@@ -95,7 +91,7 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+/* footer, */
 header,
 hgroup,
 menu,
@@ -113,9 +109,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 ol,
-ul {
+/* ul {
   list-style: none;
-}
+} */
 blockquote,
 q {
   quotes: none;
@@ -127,10 +123,10 @@ q:after {
   content: "";
   content: none;
 }
-table {
+/* table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+} */
 a {
   color: #3913b8;
   font-weight: 600;

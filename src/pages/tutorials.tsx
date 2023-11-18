@@ -9,7 +9,7 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
 import Layout from "../components/layout"
-
+import { Link } from "gatsby"
 const Aboutpage = ({ data }) => {
   const description = data.allContentfulCourse.edges[0].node.description
 
@@ -25,21 +25,31 @@ const Aboutpage = ({ data }) => {
 
         <Wrapper>
           <HeroWrapper>
-            <Title> Tutorials</Title>
+            <br></br>
+            <br></br>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-              fugiat iusto fuga praesentium optio, eaque rerum! Provident
-              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-              eius earum ut molestias architecto voluptate aliquam nihil,
-              eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-              tenetur error, harum nesciunt ipsum debitis quas aliquid.
-              Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa
-              laudantium molestias eos
+              I use{" "}
+              <a href="https://t.me/lazyfarmerchallenge">
+                this Telegram channel
+              </a>{" "}
+              as "proof of trade" timestamp. Unlike this website, where dates
+              can be manipulated, Telegram features are inaccessible to me.
+              Therefore, this is a simple and effective way to validate the date
+              of the trade. Each post will contain the following information:
               <br></br>
               <br></br>
-              Gamaiun
+              <ul>
+                <li>Trade number (1-100)</li>
+                <li>Position size</li>
+                <li>
+                  Either word "Start", "End", "Adding" (to position), "Folding"{" "}
+                </li>
+              </ul>
+              <br></br>
+              <br></br>
+              <Signature>
+                <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
+              </Signature>
             </Text>
           </HeroWrapper>
           <Footer />
@@ -95,7 +105,11 @@ const Title = styled.h1`
   mix-blend-mode: normal;
   /* text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); */
 `
-
+const Signature = styled(Link)`
+  img {
+    height: 70px;
+  }
+`
 const Text = styled.h5`
   max-width: 600px;
   font-style: normal;

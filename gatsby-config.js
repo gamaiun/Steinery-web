@@ -13,11 +13,11 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Cornfield`,
-    description: `Commodity Trading Research`,
+    title: `LazyFarmer`,
+    description: `100 Trades Challenge`,
     author: `@MyDesign`,
     // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-    keywords: `corn, commodity, trading, trading code, commodity research`,
+    keywords: ` commodity, trading challenge, trading`,
     image:
       "https://searchengineland.com/wp-content/seloads/2017/01/devtools-search-canonical-800x495.png",
   },

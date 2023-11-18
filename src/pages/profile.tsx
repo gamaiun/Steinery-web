@@ -23,7 +23,7 @@ const Aboutpage = ({ data }) => {
   return (
     <Layout>
       <AboutLayout>
-        <Seo title="CORNFIELD" />
+        <Seo title="100 Trades Challenge" />
         <WaveBackground />
         <Wrapper>
           <HeroWrapper>
@@ -33,7 +33,6 @@ const Aboutpage = ({ data }) => {
               the information on this website is offered free of charge at this
               stage.
               <br></br> <br></br>
-              Gamaiun
             </Text>
           </HeroWrapper>
         </Wrapper>

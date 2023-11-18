@@ -6,8 +6,8 @@ export const menuData = [
     alt: "courses",
   },
   {
-    title: "Tutorials",
-    icon: "/images/icons/tutorials.svg",
+    title: "Telegram",
+    icon: "/images/icons/telegram_logo.svg",
     link: "/tutorials",
     alt: "tutorials",
   },

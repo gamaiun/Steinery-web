@@ -33,7 +33,6 @@ const Aboutpage = ({ data }) => {
               the information on this website is offered free of charge at this
               stage.
               <br></br> <br></br>
-              Gamaiun
             </Text>
           </HeroWrapper>
         </Wrapper>

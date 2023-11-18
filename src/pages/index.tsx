@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
+import { Link } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCornfieldFront.edges[0].node.title
@@ -18,7 +19,7 @@ const IndexPage = ({ data }) => {
   //   data.allContentfulCornfieldFront.edges[0].node?.illustrationMain.url
 
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
-
+  // const localImagePath = "/images/icons/award.svg"
   return (
     <Layout>
       <Seo title="CORNFIELD" />
@@ -34,6 +35,13 @@ const IndexPage = ({ data }) => {
             <Title>{title}</Title>
             {/* <Caption>20sections 3 hours</Caption> */}
             <Description>{description}</Description>
+            {/* <img src={localImagePath} alt="local image" /> */}
+            {/* <MyLink to="/">
+              <img src="/images/logos/cornfield_logo.webp" alt="Logo" />
+            </MyLink> */}
+            <Signature>
+              <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
+            </Signature>
             {/* 
             <PurchaseButton /> */}
             {/* <SmallText>
@@ -111,6 +119,8 @@ const Description = styled.p`
   font-style: normal;
   font-size: 20px;
   line-height: 140%;
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
   color: #3c437e;
   text-align: justify;
   text-align: start;
@@ -218,5 +228,17 @@ const Illustration = styled.img`
     height: 250px;
     /* max-width: 50%; /* Set maximum width to 80% when the screen width is 780px or less */
     padding: 0px;
+  }
+`
+
+const MyLink = styled(Link)`
+  img {
+    height: 44px;
+    width: 44px;
+  }
+`
+const Signature = styled(Link)`
+  img {
+    height: 70px;
   }
 `
