@@ -11,7 +11,7 @@ import Footer from "../components/footer"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 
-const Aboutpage = ({ data }) => {
+const Weekly = ({ data }) => {
   const description = data.allContentfulCourse.edges[0].node.description
 
   const illustration =
@@ -64,6 +64,13 @@ const Aboutpage = ({ data }) => {
               imperfections. <br></br>
               <br></br>
               <br></br>
+              <h2>100 Trades Challenge</h2>
+              My goal in this challenge is to turn my 2K$ account into 10K$
+              within a period of 4 months. 38% a month. Is it possible? I don't
+              know. Let's try )))
+              <br></br>
+              <br></br>
+              <br></br>
               <Signature>
                 <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
               </Signature>
@@ -75,7 +82,7 @@ const Aboutpage = ({ data }) => {
     </Layout>
   )
 }
-export default Aboutpage
+export default Weekly
 
 export const query = graphql`
   query MyQuery {

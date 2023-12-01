@@ -26,10 +26,7 @@ const IndexPage = ({ data }) => {
       <WaveBackground />
       <Wrapper>
         <HeroWrapper>
-          <Illustration
-            src="/images/contentful/corn-main.webp"
-            alt="illustration"
-          />
+          <Illustration src="/images/contentful/dog.png" alt="illustration" />
           {/* <CourseCard illustration={illustration} /> */}
           <TextWrapper>
             <Title>{title}</Title>

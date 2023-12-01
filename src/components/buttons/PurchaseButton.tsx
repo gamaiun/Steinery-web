@@ -5,10 +5,7 @@ function PurchaseButton() {
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon
-          src="/images/logos/cornfield_logo_white.webp"
-          alt="button_icon_alt"
-        />
+        <Icon src="/images/logos/paw.png" alt="button_icon_alt" />
         {/* <Ring src="/images/icons/icon-ring.svg" alt="button_ring_alt" /> */}
       </IconWrapper>
       <TextWrapper>

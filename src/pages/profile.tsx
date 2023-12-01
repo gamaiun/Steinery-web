@@ -24,22 +24,73 @@ const Aboutpage = ({ data }) => {
     <Layout>
       <AboutLayout>
         <Seo title="100 Trades Challenge" />
-        <WaveBackground />
-        <Wrapper>
+        {/* <WaveBackground /> */}
+        <Colorback>
+          {/* <Wrapper> */}
           <HeroWrapper>
-            <Title> Profile </Title>
+            <Title> 100 Trades Challenge </Title>
             <Text>
-              The profile registration option is currently unavailable as all
-              the information on this website is offered free of charge at this
-              stage.
+              <h2>
+                My goal is to turn my modest 2K$ account into 10K$ within a
+                period of 4 months, starting 20/11/2023.
+              </h2>
+              <br></br>
+              <h2>Trading Rules</h2>
+              <ul>
+                <li>One instrument only: SPY500.</li>
+                <li>No hedging. I should either Short or Long.</li>
+                <li>No external indicators (RSI, SMA, ect.)</li>
+                <li>
+                  No external signals, subscriptions, "trading services" of any
+                  kind. I should rely only on my understanding of the market and
+                  price action.
+                </li>
+                <li>
+                  {" "}
+                  Definition of "trade": Trade is not necessarily a single entry
+                  and exit. I can enter and exit multiple times, so "Trade 7",
+                  for example, is actualy - trading session number 7 with trades
+                  7.1, 7.2, 7.3...
+                </li>
+              </ul>
+              <br></br>
+              <br></br>
+              <h2>My Indicators</h2>I rely on my custom made indicators,
+              constructed using a mesh of deltas of volumes, moving averages and
+              weights. Not all of them will trigger a trade entry, and most of
+              them won't be of any value - but any journey needs a starting
+              point and I start with these tools.
+              <br></br>
+              <br></br>
+              <h2>Instrument</h2>I adopt Tom Hougaard (TraderTom) approach,
+              limiting myself to just one instrument. The SP500 under the US500
+              ticker. This restriction prohibits hedging positions or
+              diversifying the portfolio across multiple instruments.
+              <br></br>
+              <br></br>
+              Additionally, I adhere to the H1 timeframe candles, aligning with
+              my trading philosophy for this challenge.
+              <br></br>
+              <br></br>
+              <strong>Start Time:</strong> 20.11.2023
+              <br></br>
+              <strong>End Time:</strong> 20.03.2024
+              <br></br>
+              <strong>Starting capital: </strong>2048$
+              <br></br>
+              <strong>Goal: </strong>10000$
+              <br></br>
+              <br></br>
+              <br></br>
               <br></br> <br></br>
             </Text>
           </HeroWrapper>
-        </Wrapper>
+          {/* </Wrapper> */}
 
-        <FooterWrapper>
-          <Footer />
-        </FooterWrapper>
+          <FooterWrapper>
+            <Footer />
+          </FooterWrapper>
+        </Colorback>
       </AboutLayout>
     </Layout>
   )
@@ -95,7 +146,9 @@ const FooterWrapper = styled.div`
 const Wrapper = styled.div`
   flex: 1; /* Allows Wrapper to take up remaining vertical space */
 `
-
+const Colorback = styled.div`
+  background: linear-gradient(200.44deg, #6494e9 30.57%, #ffffff 90.38%);
+`
 const Title = styled.h1`
   max-width: 500px;
   font-style: normal;

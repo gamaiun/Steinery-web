@@ -52,6 +52,17 @@ const Aboutpage = ({ data }) => {
               </Signature>
             </Text>
           </HeroWrapper>
+          <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br> <br></br>
+          <br></br>
           <Footer />
         </Wrapper>
       </AboutLayout>
