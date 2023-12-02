@@ -217,12 +217,67 @@ const Chart = ({ points, trades }) => {
   )
 }
 
-const AppContainer = styled.div`
-  width: 1200px;
+/* width: 1200px;
   height: 100px;
   margin-bottom: 500px;
   grid-column: span 2;
   padding-right: 60px;
+` */
+const AppContainer = styled.div`
+  width: 1200px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    width: 1000px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 890px) {
+    width: 700px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 627px) {
+    width: 430px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 420px) {
+    width: 350px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    margin: 0 auto;
+  }
+  /* width: 1200px; 
+  max-width: 1200px; 
+  height: 400px; 
+  margin-bottom: 50px; 
+  padding-right: 60px;
+  position: relative;
+  max-width: 1234px;
+  gap: 0;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 300px
+    margin-bottom: 0px; 
+  }
+  @media (max-width: 768px) {
+    width: 600px;
+
+    margin-bottom: 0px; 
+  } */
 `
 
 const App = ({ points, trades }) => {

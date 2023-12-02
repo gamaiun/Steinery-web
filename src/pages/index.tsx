@@ -61,8 +61,8 @@ const IndexPage = ({ data }) => {
               including 12 hours for SwiftUI, for iOS 13 and iOS 14.
             </SmallText> */}
           </TextWrapper>
-          <App points={points} trades={trades} />
         </HeroWrapper>
+        <App points={points} trades={trades} />
 
         {/* <Divider /> */}
         <GridSection sections={sections} />
@@ -104,6 +104,18 @@ export const query = graphql`
     }
   }
 `
+
+// const AppContainer = styled.div`
+//   width: 100%; /* Take the full width of the container */
+//   max-width: 1200px; /* Set a maximum width */
+//   height: 400px; /* Set an initial height */
+//   margin-bottom: 20px; /* Adjust margin as needed */
+
+//   @media (max-width: 768px) {
+//     /* Adjust styles for screens with a width of 768px or less */
+//     height: 100px;
+//   }
+// `
 
 const Wrapper = styled.div`
   background: linear-gradient(180.44deg, #6494e9 20.57%, #e6e2f2 50.38%);
