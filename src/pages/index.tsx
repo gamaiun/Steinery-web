@@ -9,6 +9,8 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
+import App from "../components/App"
+const rootElement = document.getElementById("root")
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCornfieldFront.edges[0].node.title
@@ -39,6 +41,7 @@ const IndexPage = ({ data }) => {
             <Signature>
               <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
             </Signature>
+
             {/* 
             <PurchaseButton /> */}
             {/* <SmallText>
@@ -46,9 +49,12 @@ const IndexPage = ({ data }) => {
               including 12 hours for SwiftUI, for iOS 13 and iOS 14.
             </SmallText> */}
           </TextWrapper>
+          <App />
         </HeroWrapper>
+
         {/* <Divider /> */}
         <GridSection sections={sections} />
+
         <ButtonWrapper>
           {/* <AuthorWrapper>
             <AvatarImage src="/images/avatars/Meng.png" alt="avatar" />
@@ -56,6 +62,7 @@ const IndexPage = ({ data }) => {
           </AuthorWrapper>{" "} */}
           <PurchaseButton />
         </ButtonWrapper>
+
         <Footer />
       </Wrapper>
     </Layout>

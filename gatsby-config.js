@@ -13,7 +13,7 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `LazyFarmer`,
+    title: ``,
     description: `100 Trades Challenge`,
     author: `@MyDesign`,
     // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -61,7 +61,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/logos/corn-logo.png`, // This path is relative to the root of the site.
+        icon: `static/images/logos/paw.png`, // This path is relative to the root of the site.
       },
     },
     // `gatsby-plugin-gatsby-cloud`,
