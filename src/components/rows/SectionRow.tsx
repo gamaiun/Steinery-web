@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 function SectionRow(props) {
-  const { index, title, description, timestamp } = props
+  const { index, title, description, points } = props
   return (
     <Wrapper>
       <Index>{index}</Index>
@@ -11,7 +11,7 @@ function SectionRow(props) {
         <ProgressBar />
         <Description>{description}</Description>
       </TextWrapper>
-      {/* <Timestamp>{timestamp}</Timestamp> */}
+      <Timestamp>{points + "$"}</Timestamp>
     </Wrapper>
   )
 }

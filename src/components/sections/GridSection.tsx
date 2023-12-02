@@ -14,9 +14,9 @@ function GridSection(props) {
           <Link to={`/${section.slug}`} key={index}>
             <SectionRow
               index={index + 1}
-              title={section.title}
+              // title={section.title}
               description={section.description}
-              timestamp="" //{section.duration}
+              points={section.resultPoints}
             />
           </Link>
         ))}

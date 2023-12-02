@@ -10,25 +10,37 @@ import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
 import App from "../components/App"
-const rootElement = document.getElementById("root")
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCornfieldFront.edges[0].node.title
 
   const description = data.allContentfulCornfieldFront.edges[0].node.description
 
-  // const illustration =
-  //   data.allContentfulCornfieldFront.edges[0].node?.illustrationMain.url
+  const illustration =
+    data.allContentfulCornfieldFront.edges[0].node?.illustrationMain.url
 
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
-  // const localImagePath = "/images/icons/award.svg"
+  const trades = sections.map(section => section.tradeNumber)
+  const points = sections.map(section => section.resultPoints)
+
+  // const GridSection = ({ sections }) => {
+  //   const logs = sections.map((section, index) => {
+  //     const trades = section.tradeNumber
+  //     const points = section.resultPoints
+
+  //     return `Section ${index + 1}: Trades - ${trades}, Points - ${points}`
+  //   })
+  //   console.log(logs)
+  //   return null
+  // }
+  console.log(points)
   return (
     <Layout>
       <Seo title="CORNFIELD" />
       <WaveBackground />
       <Wrapper>
         <HeroWrapper>
-          <Illustration src="/images/contentful/dog.png" alt="illustration" />
+          <Illustration src={illustration} />
           {/* <CourseCard illustration={illustration} /> */}
           <TextWrapper>
             <Title>{title}</Title>
@@ -49,7 +61,7 @@ const IndexPage = ({ data }) => {
               including 12 hours for SwiftUI, for iOS 13 and iOS 14.
             </SmallText> */}
           </TextWrapper>
-          <App />
+          <App points={points} trades={trades} />
         </HeroWrapper>
 
         {/* <Divider /> */}
@@ -60,9 +72,9 @@ const IndexPage = ({ data }) => {
             <AvatarImage src="/images/avatars/Meng.png" alt="avatar" />
             <Caption>Created by Gamaiun</Caption>
           </AuthorWrapper>{" "} */}
+
           <PurchaseButton />
         </ButtonWrapper>
-
         <Footer />
       </Wrapper>
     </Layout>
@@ -84,6 +96,8 @@ export const query = graphql`
             slug
             title
             description
+            resultPoints
+            tradeNumber
           }
         }
       }
