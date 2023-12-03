@@ -13,12 +13,12 @@ import Layout from "../components/layout"
 const Aboutpage = ({ data }) => {
   // const title = data.allContentfulCourse.edges[0].node.title
 
-  const description = data.allContentfulCourse.edges[0].node.description
+  // const description = data.allContentfulCourse.edges[0].node.description
 
-  const illustration =
-    data.allContentfulCourse.nodes[0]?.illustration?.file?.url
+  // const illustration =
+  //   data.allContentfulCourse.nodes[0]?.illustration?.file?.url
 
-  const sections = data.allContentfulCourse.edges[0].node.sections
+  // const sections = data.allContentfulCourse.edges[0].node.sections
 
   return (
     <Layout>
@@ -28,12 +28,11 @@ const Aboutpage = ({ data }) => {
         <Colorback>
           {/* <Wrapper> */}
           <HeroWrapper>
-            <Title> 100 Trades Challenge </Title>
             <Text>
-              <h2>
-                My goal is to turn my modest 2K$ account into 10K$ within a
-                period of 4 months, starting 20/11/2023.
-              </h2>
+              <Title> 100 Trades Challenge </Title>
+              <h3>
+                2K$ => 10K$ within 4 months, starting 20/11/2023.
+              </h3>
               <br></br>
               <h2>Trading Rules</h2>
               <ul>
@@ -97,36 +96,36 @@ const Aboutpage = ({ data }) => {
 }
 export default Aboutpage
 
-export const query = graphql`
-  query MyQuery {
-    allContentfulCourse {
-      edges {
-        node {
-          title
-          description
-          sections {
-            duration
-            description
-            title
-            slug
-            illustration {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-      nodes {
-        illustration {
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query MyQuery {
+//     allContentfulCourse {
+//       edges {
+//         node {
+//           title
+//           description
+//           sections {
+//             duration
+//             description
+//             title
+//             slug
+//             illustration {
+//               file {
+//                 url
+//               }
+//             }
+//           }
+//         }
+//       }
+//       nodes {
+//         illustration {
+//           file {
+//             url
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 const AboutLayout = styled.div`
   display: flex;
@@ -153,9 +152,10 @@ const Title = styled.h1`
   max-width: 500px;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 30px;
+  text-transform: uppercase;
   line-height: 62px;
-  color: #fffbf6;
+  color: #e9e99f;
   mix-blend-mode: normal;
   /* text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); */
 `

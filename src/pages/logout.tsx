@@ -13,12 +13,12 @@ import Layout from "../components/layout"
 const Aboutpage = ({ data }) => {
   // const title = data.allContentfulCourse.edges[0].node.title
 
-  const description = data.allContentfulCourse.edges[0].node.description
+  // const description = data.allContentfulCourse.edges[0].node.description
 
-  const illustration =
-    data.allContentfulCourse.nodes[0]?.illustration?.file?.url
+  // const illustration =
+  //   data.allContentfulCourse.nodes[0]?.illustration?.file?.url
 
-  const sections = data.allContentfulCourse.edges[0].node.sections
+  // const sections = data.allContentfulCourse.edges[0].node.sections
 
   return (
     <Layout>
@@ -46,36 +46,36 @@ const Aboutpage = ({ data }) => {
 }
 export default Aboutpage
 
-export const query = graphql`
-  query MyQuery {
-    allContentfulCourse {
-      edges {
-        node {
-          title
-          description
-          sections {
-            duration
-            description
-            title
-            slug
-            illustration {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-      nodes {
-        illustration {
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query MyQuery {
+//     allContentfulCourse {
+//       edges {
+//         node {
+//           title
+//           description
+//           sections {
+//             duration
+//             description
+//             title
+//             slug
+//             illustration {
+//               file {
+//                 url
+//               }
+//             }
+//           }
+//         }
+//       }
+//       nodes {
+//         illustration {
+//           file {
+//             url
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 const AboutLayout = styled.div`
   display: flex;

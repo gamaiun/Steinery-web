@@ -84,36 +84,36 @@ const Weekly = ({ data }) => {
 }
 export default Weekly
 
-export const query = graphql`
-  query MyQuery {
-    allContentfulCourse {
-      edges {
-        node {
-          title
-          description
-          sections {
-            duration
-            description
-            title
-            slug
-            illustration {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-      nodes {
-        illustration {
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query MyQuery {
+//     allContentfulCourse {
+//       edges {
+//         node {
+//           title
+//           description
+//           sections {
+//             duration
+//             description
+//             title
+//             slug
+//             illustration {
+//               file {
+//                 url
+//               }
+//             }
+//           }
+//         }
+//       }
+//       nodes {
+//         illustration {
+//           file {
+//             url
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Wrapper = styled.div`
   background: linear-gradient(200.44deg, #6494e9 30.57%, #ffffff 90.38%);
