@@ -119,7 +119,11 @@ const Title = styled.h1`
   line-height: 62px;
   color: #e9e99f;
   mix-blend-mode: normal;
-  /* text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); */
+  @media (max-width: 780px) {
+    max-width: 500px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 `
 
 const Text = styled.h5`

@@ -134,6 +134,11 @@ const Title = styled.h4`
   color: #f5ecbb;
   mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  @media (max-width: 780px) {
+    max-width: 500px;
+    font-size: 30px;
+    font-weight: bold;
+  }
 `
 
 // const Caption = styled.p`
@@ -149,7 +154,7 @@ const Description = styled.p`
   font-style: normal;
   font-size: 20px;
   line-height: 140%;
-  padding-top: 20px;
+  /* padding-top: 10px; */
   /* padding-bottom: 20px; */
   color: #3c437e;
   text-align: justify;
