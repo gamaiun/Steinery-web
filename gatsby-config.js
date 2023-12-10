@@ -26,6 +26,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-csv`,
 
     {
       resolve: `gatsby-transformer-remark`,
@@ -38,6 +39,14 @@ module.exports = {
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
         accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_TOKEN,
+      },
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "orders",
+        path: `${__dirname}/src/data`,
       },
     },
 

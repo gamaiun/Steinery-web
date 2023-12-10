@@ -26,6 +26,7 @@ const IndexPage = ({ data }) => {
   // const GridSection = ({ sections }) => {
   //   const logs = sections.map((section, index) => {
   //     const trades = section.tradeNumber
+
   //     const points = section.resultPoints
 
   //     return `Section ${index + 1}: Trades - ${trades}, Points - ${points}`

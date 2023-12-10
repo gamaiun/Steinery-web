@@ -38,20 +38,20 @@ const Aboutpage = ({ data }) => {
               <ul>
                 <li>One instrument only: SPY500.</li>
                 <li>No hedging. I should either Short or Long.</li>
-                <li>No external indicators (RSI, SMA, ect.)</li>
-                <li>
-                  No external signals, subscriptions, "trading services" of any
-                  kind. I should rely only on my understanding of the market and
-                  price action.
-                </li>
-                <li>
-                  {" "}
-                  Definition of "trade": Trade is not necessarily a single entry
+                <li>Stop trading for a day after 10% loss.</li>
+                <li>No trading after 19:00 unless swing.</li>
+                <li>No external signals, indicators, "trading services".</li>
+                <li><strong>From Trade16 and on</strong>: Mandatory Stop Loss at 5% or less. </li>
+                <li><strong>From Trade16 and on</strong>: No "all in trades". I must slip into the position gradually. 
+          </li>
+      
+              </ul>
+              <br></br>
+              <br></br>
+              <strong>Definition of "trade":</strong> Trade is not necessarily a single entry
                   and exit. I can enter and exit multiple times, so "Trade 7",
                   for example, is actualy - trading session number 7 with trades
                   7.1, 7.2, 7.3...
-                </li>
-              </ul>
               <br></br>
               <br></br>
               <h2>My Indicators</h2>I rely on my custom made indicators,
