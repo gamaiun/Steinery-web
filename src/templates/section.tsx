@@ -89,10 +89,7 @@ export const sectionQuery = graphql`
       }
       youtubeVideo
       title
-      pageIllustration {
-        url
-      }
-      description
+
       slug
     }
   }
