@@ -19,9 +19,10 @@ const Wrapper = styled.div`
   font-size: 18px;
   line-height: 140%;
   max-width: 800px;
+  min-height: 500px;
   margin: 0 auto;
   text-align: start;
-  padding: 50px 20px;
+  padding: 0px 20px;
   color: #010953;
   text-align: justify;
 

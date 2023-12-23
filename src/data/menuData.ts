@@ -27,12 +27,12 @@ export const tooltipData = [
     link: "/profile",
     alt: "challenge",
   },
-  {
-    title: "Plan",
-    icon: "/images/icons/cube.svg",
-    link: "/plans",
-    alt: "plans",
-  },
+  // {
+  //   title: "Plan",
+  //   icon: "/images/icons/cube.svg",
+  //   link: "/plans",
+  //   alt: "plans",
+  // },
   // // { title: "Settings", icon: "/images/icons/settings.svg", link: "/settings" },
   // {
   //   title: "Sign out",

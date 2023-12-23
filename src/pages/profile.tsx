@@ -30,28 +30,25 @@ const Aboutpage = ({ data }) => {
           <HeroWrapper>
             <Text>
               <Title> 100 Trades Challenge </Title>
-              <h3>
-                2K$ => 10K$ within 4 months, starting 20/11/2023.
-              </h3>
+              <strong>Maximize 500$ investment in a 4 months period.</strong>
               <br></br>
               <h2>Trading Rules</h2>
               <ul>
-                <li>One instrument only: SPY500.</li>
-                <li>No hedging. I should either Short or Long.</li>
-                <li>Stop trading for a day after 10% loss.</li>
-                <li>No trading after 19:00 unless swing.</li>
+                <li>One instrument only.</li>
+                <li>Max risk 10%</li>
                 <li>No external signals, indicators, "trading services".</li>
-                <li><strong>From Trade16 and on</strong>: Mandatory Stop Loss at 5% or less. </li>
-                <li><strong>From Trade16 and on</strong>: No "all in trades". I must slip into the position gradually. 
-          </li>
-      
               </ul>
               <br></br>
               <br></br>
-              <strong>Definition of "trade":</strong> Trade is not necessarily a single entry
-                  and exit. I can enter and exit multiple times, so "Trade 7",
-                  for example, is actualy - trading session number 7 with trades
-                  7.1, 7.2, 7.3...
+              <strong>Definition of "trade":</strong> Traditionally, a trade is
+              viewed as a singular event, characterized by a single entry and
+              exit point. However, I believe it's more insightful to consider a
+              trade as a session encompassing multiple transactions. For
+              instance, let's take 'Trade 7'. In my challenge, 'Trade 7' is not
+              just one transaction but a series of them, identified as 7.1, 7.2,
+              7.3, and so on. This approach allows us to view trading as a
+              continuous process rather than a series of isolated events,
+              offering a more holistic understanding of trading patterns.
               <br></br>
               <br></br>
               <h2>My Indicators</h2>I rely on my custom made indicators,
@@ -62,22 +59,20 @@ const Aboutpage = ({ data }) => {
               <br></br>
               <br></br>
               <h2>Instrument</h2>I adopt Tom Hougaard (TraderTom) approach,
-              limiting myself to just one instrument. The SP500 under the US500
-              ticker. This restriction prohibits hedging positions or
-              diversifying the portfolio across multiple instruments.
+              limiting myself to just one instrument. DAX40 index.
               <br></br>
               <br></br>
-              Additionally, I adhere to the H1 timeframe candles, aligning with
+              Additionally, I adhere to the 5M timeframe candles, aligning with
               my trading philosophy for this challenge.
               <br></br>
               <br></br>
-              <strong>Start Time:</strong> 20.11.2023
+              <strong>Start Time:</strong> 01.01.2024
               <br></br>
-              <strong>End Time:</strong> 20.03.2024
+              <strong>End Time:</strong> 01.04.2024
               <br></br>
-              <strong>Starting capital: </strong>2048$
+              <strong>Starting capital: </strong>500$
               <br></br>
-              <strong>Goal: </strong>10000$
+              <strong>Goal: </strong>1500$
               <br></br>
               <br></br>
               <br></br>
@@ -95,37 +90,6 @@ const Aboutpage = ({ data }) => {
   )
 }
 export default Aboutpage
-
-// export const query = graphql`
-//   query MyQuery {
-//     allContentfulCourse {
-//       edges {
-//         node {
-//           title
-//           description
-//           sections {
-//             duration
-//             description
-//             title
-//             slug
-//             illustration {
-//               file {
-//                 url
-//               }
-//             }
-//           }
-//         }
-//       }
-//       nodes {
-//         illustration {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 const AboutLayout = styled.div`
   display: flex;
@@ -161,10 +125,8 @@ const Title = styled.h1`
     max-width: 500px;
     font-size: 20px;
     font-weight: bold;
-
   }
 `
-
 
 const Text = styled.h5`
   max-width: 500px;

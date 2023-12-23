@@ -1,4 +1,3 @@
-// import { useStaticQuery } from "gatsby"
 import "../components/layout.css"
 import * as React from "react"
 import { graphql } from "gatsby"
@@ -7,7 +6,6 @@ import Seo from "../components/seo"
 import Footer from "../components/footer"
 import LayoutTable from "../components/layoutable"
 import Layout from "../components/layout"
-// import Plan from "../components/plan"
 
 export const query = graphql`
   query MyQuery {
@@ -65,7 +63,7 @@ const Planspage = ({ data }) => {
         <HeroWrapper>
           <Text>
             <Title>Plan</Title>
-            <MyTable data={data} /> {/* Pass the data prop to MyTable */}
+            <MyTable data={data} />
             <br></br>
           </Text>
         </HeroWrapper>
@@ -131,10 +129,3 @@ const HeroWrapper = styled.div`
     justify-items: center;
   }
 `
-// const AboutLayout = ({ children }) => {
-//   return (
-//     <>
-//       <main>{children}</main>
-//     </>
-//   )
-// }

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Gamaiun",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.19.0",
     "@cubejs-client/core": "^0.31.0",
     "babel-plugin-styled-components": "^1.11.1",
     "chart.js": "^4.4.0",

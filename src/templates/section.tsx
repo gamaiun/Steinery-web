@@ -7,6 +7,17 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import GridSection from "../components/sections/GridSection"
 import Footer from "../components/footer"
+import { INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
+const options = {
+  renderNode: {
+    [INLINES.HYPERLINK]: node => {
+      console.log(node)
+    },
+  },
+}
+
 function Section(props) {
   const { data } = props
   const sectionData = data.contentfulCornfieldPages
@@ -14,24 +25,36 @@ function Section(props) {
 
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
 
-  console.log(data)
+  console.log(markdown)
   return (
     <Layout>
       <Seo title="CORNFIELD" />
       <WaveBackground />
       <Wrapper>
         <HeroWrapper>
-          <Illustration
+          {/* <Illustration
             src={sectionData.pageIllustration.url}
             alt="illustration"
-          />
+          /> */}
           <TextWrapper>
             <Title>{sectionData.title}</Title>
-            <Description>{sectionData.description}</Description>
+            {/* <Description>{sectionData.description}</Description> */}
           </TextWrapper>
+          {/* <>
+            <iframe
+              width="560"
+              height="315"
+              src={sectionData.youtubeVideo}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </> */}
         </HeroWrapper>
+
         <SectionContent {...markdown} />
-        <GridSection sections={sections} />
+        {/* <GridSection sections={sections} /> */}
         <Footer />
       </Wrapper>
     </Layout>
@@ -64,6 +87,7 @@ export const sectionQuery = graphql`
           htmlAst
         }
       }
+      youtubeVideo
       title
       pageIllustration {
         url
@@ -80,45 +104,46 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   max-width: 500px;
-  padding-top: 40px;
+  padding-top: 20px;
   font-style: normal;
   font-weight: bold;
   font-size: 50px;
-  line-height: 52px;
+  /* line-height: 52px; */
   color: #e8d9ff;
   mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 `
-const Illustration = styled.img`
-  padding-top: 0px;
-  max-width: 120%;
-  width: 100%;
-  margin: 0 auto;
-  grid-template-columns: 380px auto;
-  position: relative;
-  display: grid;
-  width: 350px;
-  overflow: hidden;
-`
+// const Illustration = styled.img`
+//   padding-top: 50px;
+//   max-width: 50%;
+//   width: 70%;
+//   margin: 0 auto;
+//   grid-template-columns: 300px auto;
+//   position: relative;
+//   display: grid;
+//   width: 300px;
+//   overflow: hidden;
+// `
 
-const Description = styled.p`
-  max-width: 400px;
-  font-style: italic;
-  font-size: 20px;
-  line-height: 140%;
-  color: #cad5fe;
-  padding-top: 10%;
-  text-align: justify;
+// const Description = styled.p`
+//   max-width: 400px;
+//   font-style: italic;
+//   font-size: 20px;
+//   line-height: 140%;
+//   color: #cad5fe;
+//   padding-top: 10px;
+//   padding-bottom: 50px;
+//   text-align: justify;
 
-  @media (max-width: 780px) {
-    grid-template-columns: 1fr;
-    padding-left: 45px;
-    padding-right: 45px;
+//   @media (max-width: 780px) {
+//     grid-template-columns: 1fr;
+//     padding-left: 45px;
+//     padding-right: 45px;
 
-    justify-items: center;
-    padding-bottom: 10%;
-  }
-`
+//     justify-items: center;
+//     padding-bottom: 10%;
+//   }
+// `
 
 const TextWrapper = styled.div`
   position: relative;
@@ -135,9 +160,10 @@ const TextWrapper = styled.div`
 const HeroWrapper = styled.div`
   display: grid;
   max-width: 1234px;
-  grid-template-columns: 360px auto;
-  gap: 20px;
-  padding: 160px 20px 0px;
+  /* grid-template-columns: 360px auto; */
+  /* gap: 20px; */
+  padding-top: 100px;
+
   justify-content: center;
   margin: 0 auto;
 
@@ -146,7 +172,7 @@ const HeroWrapper = styled.div`
   }
 
   @media (max-width: 780px) {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     justify-items: center;
   }
 `
