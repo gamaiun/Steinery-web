@@ -11,7 +11,7 @@ import Footer from "../components/footer"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import EconomicCalendar from "../components/EconomicCalendar"
-
+import PositionSizeCalculator from "../components/PositionSizeCalculator"
 const Calendar = ({ data }) => {
   return (
     <Layout>
@@ -21,6 +21,7 @@ const Calendar = ({ data }) => {
         <HeroWrapper>
           <Title>Economic Calendar</Title>
           <EconomicCalendar />
+          <PositionSizeCalculator />
         </HeroWrapper>
         <Footer />
       </Wrapper>

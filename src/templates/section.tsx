@@ -7,16 +7,16 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import GridSection from "../components/sections/GridSection"
 import Footer from "../components/footer"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+// import { INLINES } from "@contentful/rich-text-types"
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const options = {
-  renderNode: {
-    [INLINES.HYPERLINK]: node => {
-      console.log(node)
-    },
-  },
-}
+// const options = {
+//   renderNode: {
+//     [INLINES.HYPERLINK]: node => {
+//       console.log(node)
+//     },
+//   },
+// }
 
 function Section(props) {
   const { data } = props
