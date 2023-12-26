@@ -46,12 +46,12 @@ export const tooltipData = [
     link: "/about",
     alt: "courses",
   },
-  {
-    title: "Telegram",
-    icon: "/images/icons/cube.svg",
-    link: "/tutorials",
-    alt: "tutorials",
-  },
+  // {
+  //   title: "Telegram",
+  //   icon: "/images/icons/cube.svg",
+  //   link: "/tutorials",
+  //   alt: "tutorials",
+  // },
   {
     title: "Calendar",
     icon: "/images/icons/cube.svg",

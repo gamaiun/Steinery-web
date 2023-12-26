@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
+// import React from "react"
+// import { graphql } from "gatsby"
 
-const Plan = ({ children }) => {
-  ;<>
-    // <main>{children}</main>
-  </>
-}
+// const Plan = ({ children }) => {
+//   ;<>
+//     // <main>{children}</main>
+//   </>
+// }
 
-export default Plan
+// export default Plan
