@@ -34,8 +34,7 @@ const Aboutpage = ({ data }) => {
               <br></br>
               <h2>Trading Rules</h2>
               <ul>
-                <li>One instrument only.</li>
-                <li>Max risk 10%</li>
+                <li>Max risk 5%</li>
                 <li>No external signals, indicators, "trading services".</li>
               </ul>
               <br></br>
@@ -43,32 +42,21 @@ const Aboutpage = ({ data }) => {
               <strong>Definition of "trade":</strong> Traditionally, a trade is
               viewed as a singular event, characterized by a single entry and
               exit point. However, I believe it's more insightful to consider a
-              trade as a session encompassing multiple transactions. For
-              instance, let's take 'Trade 7'. In my challenge, 'Trade 7' is not
-              just one transaction but a series of them, identified as 7.1, 7.2,
-              7.3, and so on. This approach allows us to view trading as a
-              continuous process rather than a series of isolated events,
-              offering a more holistic understanding of trading patterns.
+              trade as a session encompassing multiple transactions. In my
+              challenge, 'Trade 7' is not just one transaction but a series of
+              them, identified as 7.1, 7.2, 7.3, and so on. This approach allows
+              us to view trading as a continuous process rather than a series of
+              isolated events, offering a more holistic understanding of trading
+              patterns.
               <br></br>
               <br></br>
-              <h2>My Indicators</h2>I rely on my custom made indicators,
-              constructed using a mesh of deltas of volumes, moving averages and
-              weights. Not all of them will trigger a trade entry, and most of
-              them won't be of any value - but any journey needs a starting
-              point and I start with these tools.
+              <h2>My Indicators</h2>None. I don't rely on indicators. I rely on
+              support and resistance levels and risk management.
               <br></br>
               <br></br>
-              <h2>Instrument</h2>I adopt Tom Hougaard (TraderTom) approach,
-              limiting myself to just one instrument. DAX40 index.
+              <strong>Start Time:</strong> 12.01.2024
               <br></br>
-              <br></br>
-              Additionally, I adhere to the 5M timeframe candles, aligning with
-              my trading philosophy for this challenge.
-              <br></br>
-              <br></br>
-              <strong>Start Time:</strong> 01.01.2024
-              <br></br>
-              <strong>End Time:</strong> 01.04.2024
+              <strong>End Time:</strong> 12.04.2024
               <br></br>
               <strong>Starting capital: </strong>500$
               <br></br>

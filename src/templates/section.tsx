@@ -87,7 +87,7 @@ export const sectionQuery = graphql`
           htmlAst
         }
       }
-      youtubeVideo
+
       title
 
       slug
