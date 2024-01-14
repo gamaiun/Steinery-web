@@ -10,6 +10,10 @@ import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
 import App from "../components/App"
+import ChartDrawdown from "../components/ChartDrawdown"
+import ChartLoad from "../components/ChartLoad"
+import ChartSharp from "../components/ChartSharp"
+import ChartProfitFactor from "../components/ChartProfitFactor"
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCornfieldFront.edges[0].node.title
@@ -22,58 +26,37 @@ const IndexPage = ({ data }) => {
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
   const trades = sections.map(section => section.tradeNumber)
   const points = sections.map(section => section.resultPoints)
-
-  // const GridSection = ({ sections }) => {
-  //   const logs = sections.map((section, index) => {
-  //     const trades = section.tradeNumber
-
-  //     const points = section.resultPoints
-
-  //     return `Section ${index + 1}: Trades - ${trades}, Points - ${points}`
-  //   })
-  //   console.log(logs)
-  //   return null
-  // }
+  const maxDrawdown = sections.map(section => section.maxDrawdown)
+  const maxDepositLoad = sections.map(section => section.maxDepositLoad)
+  const sharpRatio = sections.map(section => section.sharpRatio)
+  const profitFactor = sections.map(section => section.profitFactor)
   console.log(points)
   return (
     <Layout>
       <Seo title="CORNFIELD" />
-      <WaveBackground />
+      {/* <WaveBackground /> */}
       <Wrapper>
         <HeroWrapper>
           <Illustration src={illustration} />
-          {/* <CourseCard illustration={illustration} /> */}
           <TextWrapper>
             <Title>{title}</Title>
-            {/* <Caption>20sections 3 hours</Caption> */}
             <Description>{description}</Description>
-            {/* <img src={localImagePath} alt="local image" /> */}
-            {/* <MyLink to="/">
-              <img src="/images/logos/cornfield_logo.webp" alt="Logo" />
-            </MyLink> */}
+
             <Signature>
               <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
             </Signature>
-
-            {/* 
-            <PurchaseButton /> */}
-            {/* <SmallText>
-              Purchase includes access to 30 courses. Over 80 hours of content,
-              including 12 hours for SwiftUI, for iOS 13 and iOS 14.
-            </SmallText> */}
           </TextWrapper>
         </HeroWrapper>
         <App points={points} trades={trades} />
-
-        {/* <Divider /> */}
+        <ChartsContainer>
+          <ChartDrawdown maxDrawdown={maxDrawdown} trades={trades} />
+          <ChartLoad maxDepositLoad={maxDepositLoad} trades={trades} />
+          <ChartSharp sharpRatio={sharpRatio} trades={trades} />
+          <ChartProfitFactor profitFactor={profitFactor} trades={trades} />
+        </ChartsContainer>
         <GridSection sections={sections} />
 
         <ButtonWrapper>
-          {/* <AuthorWrapper>
-            <AvatarImage src="/images/avatars/Meng.png" alt="avatar" />
-            <Caption>Created by Gamaiun</Caption>
-          </AuthorWrapper>{" "} */}
-
           <PurchaseButton />
         </ButtonWrapper>
         <Footer />
@@ -99,6 +82,11 @@ export const query = graphql`
             description
             resultPoints
             tradeNumber
+            maxDepositLoad
+            maxDrawdown
+            sharpRatio
+            profitFactor
+            averageHoldTime
           }
         }
       }
@@ -106,20 +94,8 @@ export const query = graphql`
   }
 `
 
-// const AppContainer = styled.div`
-//   width: 100%; /* Take the full width of the container */
-//   max-width: 1200px; /* Set a maximum width */
-//   height: 400px; /* Set an initial height */
-//   margin-bottom: 20px; /* Adjust margin as needed */
-
-//   @media (max-width: 768px) {
-//     /* Adjust styles for screens with a width of 768px or less */
-//     height: 100px;
-//   }
-// `
-
 const Wrapper = styled.div`
-  background: linear-gradient(180.44deg, #6494e9 20.57%, #e6e2f2 50.38%);
+  background: linear-gradient(140.44deg, #457ddd 20.57%, #f8e0ff 60.38%);
 `
 // const Logo = styled.img`
 //   width: 60px;
@@ -141,14 +117,6 @@ const Title = styled.h4`
     font-weight: bold;
   }
 `
-
-// const Caption = styled.p`
-//   font-style: normal;
-//   font-size: 15px;
-//   line-height: 130%;
-//   text-transform: uppercase;
-//   color: rgba(27, 0, 0, 0.7);
-// `
 
 const Description = styled.p`
   max-width: auto;
@@ -196,24 +164,6 @@ const ButtonWrapper = styled.div`
   }
 `
 
-// const AuthorWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: 16px;
-// `
-
-// const AvatarImage = styled.img`
-//   width: 32px;
-//   height: 32px;
-// `
-
-// const SmallText = styled.p`
-//   max-width: 280px;
-//   font-style: normal;
-//   font-size: 13px;
-//   line-height: 130%;
-//   color: rgba(5, 3, 0, 0.9);
-// `
 const HeroWrapper = styled.div`
   display: grid;
   max-width: 1234px;
@@ -237,13 +187,6 @@ const HeroWrapper = styled.div`
     justify-items: center;
   }
 `
-
-// const Divider = styled.div`
-//   width: 300px;
-//   height: 0.5px;
-//   background: rgba(0, 0, 0, 0.3);
-//   margin: 20px auto 0px;
-// `
 
 const Illustration = styled.img`
   padding-top: 0px;
@@ -277,4 +220,18 @@ const Signature = styled(Link)`
   img {
     height: 70px;
   }
+`
+const ChartsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Two columns
+  gap: 20px; // Space between charts
+  max-width: 1234px; // Aligning with the max-width of HeroWrapper
+  margin: 0 auto; // Centering the container
+  padding: 20px; // Optional padding for better spacing
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr; // One column on small screens
+  }
+  width: 90%;
+  // Ensure it takes the full width of the container
 `

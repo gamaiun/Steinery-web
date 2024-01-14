@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { Chart as ChartJS, LineElement, Tooltip, Legend } from "chart.js"
 import { registerables } from "chart.js/auto"
-
 ChartJS.register(...registerables, LineElement, Tooltip, Legend)
 
 const Chart = ({ points, trades }) => {
   const chartRef = useRef(null)
+  let myChart = useRef(null)
 
   useEffect(() => {
     // Ensure that points is an array
@@ -42,17 +42,38 @@ const Chart = ({ points, trades }) => {
     const config = {
       type: "line",
       options: {
+        plugins: {
+          legend: {
+            display: false, // This will hide the legend
+          },
+          title: {
+            display: true,
+            text: "100 Trades",
+            color: "white", // Set the color of the title
+            font: {
+              size: 20, // You can adjust the size or other font properties
+            },
+          },
+        },
         scales: {
           x: {
+            ticks: {
+              color: "black", // Change x-axis labels to black
+            },
             title: {
               display: true,
               text: "Trades",
+              color: "black",
             },
           },
           y: {
+            ticks: {
+              color: "black", // Change x-axis labels to black
+            },
             title: {
               display: true,
               text: "Points",
+              color: "black",
             },
           },
         },
@@ -76,17 +97,17 @@ const Chart = ({ points, trades }) => {
     const ctx = chartRef.current.getContext("2d")
 
     // Destroy existing chart instance if it exists
-    if (window.myLine) {
-      window.myLine.destroy()
+    if (myChart.current) {
+      myChart.current.destroy()
     }
 
     // Create a new chart instance
-    window.myLine = new ChartJS(ctx, config)
+    myChart.current = new ChartJS(ctx, config)
 
     // Cleanup function to destroy chart instance when component unmounts or data changes
     return () => {
-      if (window.myLine) {
-        window.myLine.destroy()
+      if (myChart.current) {
+        myChart.current.destroy()
       }
     }
   }, [points, trades])
