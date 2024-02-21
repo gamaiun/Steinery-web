@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { csv } from "d3-fetch"
-import MyChart from "./MyChart"
-import styled from "@emotion/styled"
-//import KPIChart from "/KPIChart"
-const ChartContent = () => {
+import MyChart from "../components/MyChart"
+import KPIChart from "../components/KPIChart"
+const ChartComponent = () => {
   const [chartData, setChartData] = useState({
     dates: [],
     balance: [],
@@ -54,50 +53,4 @@ const ChartContent = () => {
   )
 }
 
-const AppContainer = styled.div`
-  width: 1200px;
-  padding-bottom: 80px;
-  margin: 0 auto;
-
-  @media (max-width: 1200px) {
-    width: 1000px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-top: 30px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 890px) {
-    width: 700px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-top: 30px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 627px) {
-    width: 430px;
-    padding-bottom: 20px;
-    margin-bottom: 0px;
-    padding-left: 0px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 420px) {
-    width: 350px;
-    padding-bottom: 10px;
-    margin-bottom: 0px;
-    padding-left: 0px;
-    margin: 0 auto;
-  }
-`
-
-const App = ({ points, trades }) => {
-  return (
-    <AppContainer>
-      <ChartContent points={points} trades={trades} />
-    </AppContainer>
-  )
-}
-
-export default App
+export default ChartComponent

@@ -47,7 +47,8 @@ const IndexPage = ({ data }) => {
             </Signature>
           </TextWrapper>
         </HeroWrapper>
-        <App points={points} trades={trades} />
+        <App />
+        {/*points={points} trades={trades}*/}
         <ChartsContainer>
           <ChartDrawdown maxDrawdown={maxDrawdown} trades={trades} />
           <ChartLoad maxDepositLoad={maxDepositLoad} trades={trades} />
@@ -96,6 +97,7 @@ export const query = graphql`
 
 const Wrapper = styled.div`
   background: linear-gradient(140.44deg, #457ddd 20.57%, #f8e0ff 60.38%);
+  overflow-x: hidden;
 `
 // const Logo = styled.img`
 //   width: 60px;
@@ -221,17 +223,31 @@ const Signature = styled(Link)`
     height: 70px;
   }
 `
-const ChartsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); // Two columns
-  gap: 20px; // Space between charts
-  max-width: 1234px; // Aligning with the max-width of HeroWrapper
-  margin: 0 auto; // Centering the container
-  padding: 20px; // Optional padding for better spacing
+// const ChartsContainer = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   gap: 20px; // Space between charts
+//   max-width: calc(90% - 40px); // Aligning with the max-width of HeroWrapper
+//   margin: 0 auto; // Centering the container
+//   padding: 20px; // Optional padding for better spacing
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr; // One column on small screens
+//   @media (max-width: 900px) {
+//     grid-template-columns: 1fr; // One column on small screens
+//   }
+//   width: calc(90% - 40px);
+//   // Ensure it takes the full width of the container
+// `
+
+const ChartsContainer = styled.div`
+  width: 1200px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    width: 1000px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-top: 30px;
+    margin: 0 auto;
   }
-  width: 90%;
-  // Ensure it takes the full width of the container
 `
