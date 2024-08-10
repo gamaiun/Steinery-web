@@ -10,6 +10,7 @@ import WaveBackground from "../components/backgrounds/WaveBackground"
 import Footer from "../components/footer"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
+// import withAuth from "../components/withAuth"
 
 const Aboutpage = ({ data }) => {
   return (

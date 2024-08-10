@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437648995468",
+    "project_id": "byotr-33385",
+    "storage_bucket": "byotr-33385.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437648995468:android:7fc73a03b78fa5b7e0b7a9",
+        "android_client_info": {
+          "package_name": "byotr.a01.a1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPUfPQyXn3ESr1eN6RxRk8akIwVAWfDIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
