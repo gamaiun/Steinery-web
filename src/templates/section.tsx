@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import WaveBackground from "../components/backgrounds/WaveBackground"
 import GridSection from "../components/sections/GridSection"
 import Footer from "../components/footer"
+import Header from "../components/header"
 // import { INLINES } from "@contentful/rich-text-types"
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -28,35 +29,25 @@ function Section(props) {
   console.log(markdown)
   return (
     <Layout>
-      <Seo title="CORNFIELD" />
+      <Seo title="Taming the Dim Light" />
       <WaveBackground />
-      <Wrapper>
-        <HeroWrapper>
-          {/* <Illustration
+      <>
+        {/* <Header /> */}
+        <Wrapper>
+          <HeroWrapper>
+            {/* <Illustration
             src={sectionData.pageIllustration.url}
             alt="illustration"
           /> */}
-          <TextWrapper>
-            <Title>{sectionData.title}</Title>
-            {/* <Description>{sectionData.description}</Description> */}
-          </TextWrapper>
-          {/* <>
-            <iframe
-              width="560"
-              height="315"
-              src={sectionData.youtubeVideo}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </> */}
-        </HeroWrapper>
+            <TextWrapper>
+              {/* <Title>{sectionData.title}</Title> */}
+              <Description>{sectionData.description}</Description>
+            </TextWrapper>
+          </HeroWrapper>
 
-        <SectionContent {...markdown} />
-        {/* <GridSection sections={sections} /> */}
-        <Footer />
-      </Wrapper>
+          <SectionContent {...markdown} />
+        </Wrapper>
+      </>
     </Layout>
   )
 }
@@ -97,6 +88,15 @@ export const sectionQuery = graphql`
 
 const Wrapper = styled.div`
   background: linear-gradient(220.44deg, #6494e9 3.57%, #ffffff 98.38%);
+  position: relative;
+  gap: 0px;
+  text-align: justify;
+  direction: rtl; /* Ensure right alignment in parent */
+
+  @media (max-width: 800px) {
+    text-align: justify;
+    direction: rtl;
+  }
 `
 
 const Title = styled.h1`
@@ -109,6 +109,8 @@ const Title = styled.h1`
   color: #e8d9ff;
   mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  text-align: justify;
+  direction: rtl;
 `
 // const Illustration = styled.img`
 //   padding-top: 50px;
@@ -131,6 +133,7 @@ const Title = styled.h1`
 //   padding-top: 10px;
 //   padding-bottom: 50px;
 //   text-align: justify;
+//   text-align: right;
 
 //   @media (max-width: 780px) {
 //     grid-template-columns: 1fr;
@@ -142,15 +145,38 @@ const Title = styled.h1`
 //   }
 // `
 
+const Description = styled.p`
+  max-width: 400px;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 140%;
+  color: #cad5fe;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  text-align: justify;
+  direction: rtl;
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    padding-left: 45px;
+    padding-right: 45px;
+    text-align: justify;
+    direction: rtl;
+    padding-bottom: 10%;
+  }
+`
 const TextWrapper = styled.div`
   position: relative;
   /* display: grid; */
   gap: 0px;
+  text-align: justify;
+  direction: rtl;
 
   // Text Wrapper
   @media (max-width: 800px) {
-    justify-items: center;
-    text-align: center;
+    /* justify-items: center; */
+    text-align: justify;
+    direction: rtl;
   }
 `
 
@@ -161,7 +187,7 @@ const HeroWrapper = styled.div`
   /* gap: 20px; */
   padding-top: 100px;
 
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 auto;
 
   .courseCard {
@@ -170,7 +196,7 @@ const HeroWrapper = styled.div`
 
   @media (max-width: 780px) {
     /* grid-template-columns: 1fr; */
-    justify-items: center;
+    /* justify-items: center; */
   }
 `
 

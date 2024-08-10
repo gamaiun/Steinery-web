@@ -1,68 +1,31 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import PurchaseButton from "../components/buttons/PurchaseButton"
-import CourseCard from "../components/cards/CourseCard"
-import GridSection from "../components/sections/GridSection"
-import Layout from "../components/layout"
+import LayoutFrontPage from "../components/layoutFrontPage"
 import Seo from "../components/seo"
-import WaveBackground from "../components/backgrounds/WaveBackground"
-import Footer from "../components/footer"
-import { Link } from "gatsby"
-import App from "../components/App"
-import ChartDrawdown from "../components/ChartDrawdown"
-import ChartLoad from "../components/ChartLoad"
-import ChartSharp from "../components/ChartSharp"
-import ChartProfitFactor from "../components/ChartProfitFactor"
+import ImageHero from "../images/waves/hero_image.png"
 
 const IndexPage = ({ data }) => {
   const title = data.allContentfulCornfieldFront.edges[0].node.title
-
   const description = data.allContentfulCornfieldFront.edges[0].node.description
-
-  const illustration =
-    data.allContentfulCornfieldFront.edges[0].node?.illustrationMain.url
+  const illustration = ImageHero
 
   const sections = data.allContentfulCornfieldFront.edges[0].node.section
-  const trades = sections.map(section => section.tradeNumber)
   const points = sections.map(section => section.resultPoints)
-  const maxDrawdown = sections.map(section => section.maxDrawdown)
-  const maxDepositLoad = sections.map(section => section.maxDepositLoad)
-  const sharpRatio = sections.map(section => section.sharpRatio)
-  const profitFactor = sections.map(section => section.profitFactor)
   console.log(points)
   return (
-    <Layout>
-      <Seo title="CORNFIELD" />
-      {/* <WaveBackground /> */}
+    <LayoutFrontPage>
+      <Seo title="Antonevicz" />
       <Wrapper>
         <HeroWrapper>
           <Illustration src={illustration} />
           <TextWrapper>
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-
-            <Signature>
-              <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
-            </Signature>
+            <Title>A Whisper in the Rain</Title>
+            {/* <Description>by Jonathan Reid</Description> */}
           </TextWrapper>
         </HeroWrapper>
-        <App />
-        {/*points={points} trades={trades}*/}
-        <ChartsContainer>
-          <ChartDrawdown maxDrawdown={maxDrawdown} trades={trades} />
-          <ChartLoad maxDepositLoad={maxDepositLoad} trades={trades} />
-          <ChartSharp sharpRatio={sharpRatio} trades={trades} />
-          <ChartProfitFactor profitFactor={profitFactor} trades={trades} />
-        </ChartsContainer>
-        <GridSection sections={sections} />
-
-        <ButtonWrapper>
-          <PurchaseButton />
-        </ButtonWrapper>
-        <Footer />
       </Wrapper>
-    </Layout>
+    </LayoutFrontPage>
   )
 }
 export default IndexPage
@@ -80,14 +43,6 @@ export const query = graphql`
           section {
             slug
             title
-            description
-            resultPoints
-            tradeNumber
-            maxDepositLoad
-            maxDrawdown
-            sharpRatio
-            profitFactor
-            averageHoldTime
           }
         }
       }
@@ -96,24 +51,26 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(140.44deg, #457ddd 20.57%, #f8e0ff 60.38%);
-  overflow-x: hidden;
+  padding-bottom: 50px;
+
+  @media (min-width: 950px) {
+    padding-bottom: 120px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 `
-// const Logo = styled.img`
-//   width: 60px;
-//   height: 60px;
-// `
+
 const Title = styled.h4`
   max-width: 500px;
   max-height: 100px;
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: bold;
-  font-size: 40px;
-  /* line-height: 72px; */
+  font-size: 90px;
+  text-align: end;
   color: #f5ecbb;
   mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
-  @media (max-width: 780px) {
+  @media (max-width: 950px) {
     max-width: 500px;
     font-size: 30px;
     font-weight: bold;
@@ -122,47 +79,31 @@ const Title = styled.h4`
 
 const Description = styled.p`
   max-width: auto;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 140%;
-  /* padding-top: 10px; */
-  /* padding-bottom: 20px; */
-  color: #3c437e;
-  text-align: justify;
-  text-align: start;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  line-height: 0%;
+  color: #1e2351;
+  text-align: center;
+  @media (max-width: 950px) {
+    /* max-width: 500px; */
+    font-size: 15px;
+    font-weight: bold;
+  }
 `
 
 const TextWrapper = styled.div`
   position: relative;
-  display: grid;
-  gap: 20px;
-  grid-template-rows: auto auto; /* Two rows: one for title, one for description */
-  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
+  gap: 35px;
+  padding-top: 10px;
 
-  // Align grid items to start (top) of each row
-  align-content: start;
-
-  // Text Wrapper
-  @media (max-width: 780px) {
-    padding-top: 0px;
-    gap: 35px;
-    /* justify-items: center; */
-    /* text-align: center; */
-  }
-`
-
-const ButtonWrapper = styled.div`
-  position: relative;
-  display: grid;
-  padding-top: 50px;
-  gap: 0px;
-  justify-items: center;
-  text-align: center;
-
-  // Text Wrapper
-  @media (max-width: 780px) {
-    justify-items: center;
-    text-align: center;
+  @media (min-width: 950px) {
+    width: 100%; /* Make sure it takes the full width of the second column */
+    grid-column: 2 / 3; /* Occupy the second column */
   }
 `
 
@@ -170,7 +111,7 @@ const HeroWrapper = styled.div`
   display: grid;
   max-width: 1234px;
   grid-template-columns: 350px auto;
-  gap: 70px;
+  gap: 50px;
   padding: 150px 30px 0px;
   justify-content: start;
   margin: 0 auto;
@@ -179,22 +120,17 @@ const HeroWrapper = styled.div`
     margin-top: 0px;
   }
 
-  @media (max-width: 990px) {
-    gap: 30px;
-  }
-
-  @media (max-width: 780px) {
+  @media (max-width: 950px) {
     grid-template-columns: 1fr;
     padding: 130px 30px 0px;
+    padding-bottom: 50px;
     justify-items: center;
   }
 `
 
 const Illustration = styled.img`
   padding-top: 0px;
-  /* max-width: 100%; */
-  width: 350px;
-  height: 350px;
+  width: 280px;
   margin: 0 auto;
   grid-template-columns: 350px auto;
   position: relative;
@@ -202,52 +138,10 @@ const Illustration = styled.img`
   overflow: hidden;
   padding: 10px;
 
-  @media (max-width: 780px) {
+  @media (max-width: 950px) {
     grid-template-columns: 1fr;
     justify-items: center;
-    width: 250px;
-    height: 250px;
-    /* max-width: 50%; /* Set maximum width to 80% when the screen width is 780px or less */
+    width: 350px;
     padding: 0px;
-  }
-`
-
-const MyLink = styled(Link)`
-  img {
-    height: 44px;
-    width: 44px;
-  }
-`
-const Signature = styled(Link)`
-  img {
-    height: 70px;
-  }
-`
-// const ChartsContainer = styled.div`
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   gap: 20px; // Space between charts
-//   max-width: calc(90% - 40px); // Aligning with the max-width of HeroWrapper
-//   margin: 0 auto; // Centering the container
-//   padding: 20px; // Optional padding for better spacing
-
-//   @media (max-width: 900px) {
-//     grid-template-columns: 1fr; // One column on small screens
-//   }
-//   width: calc(90% - 40px);
-//   // Ensure it takes the full width of the container
-// `
-
-const ChartsContainer = styled.div`
-  width: 1200px;
-  padding-bottom: 80px;
-  margin: 0 auto;
-
-  @media (max-width: 1200px) {
-    width: 1000px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-top: 30px;
-    margin: 0 auto;
   }
 `

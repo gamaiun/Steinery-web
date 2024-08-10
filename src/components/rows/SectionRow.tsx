@@ -7,11 +7,12 @@ function SectionRow(props) {
     <Wrapper>
       <Index>{index}</Index>
       <TextWrapper>
-        <Title>{title}</Title>
-        <ProgressBar />
+        {/* <Title>{title}</Title> */}
+        {/* <ProgressBar /> */}
         <Description>{description}</Description>
       </TextWrapper>
-      <Timestamp>{points + "$"}</Timestamp>
+
+      {/* <Timestamp>{points + "$"}</Timestamp> */}
     </Wrapper>
   )
 }
@@ -70,19 +71,20 @@ const Title = styled.p`
   color: #3913b8;
 `
 
-const ProgressBar = styled.div`
-  width: 170px;
-  height: 5px;
-  background: rgba(68, 66, 179, 0.1);
-  background-blend-mode: overlay;
-  border-radius: 8px;
-`
+// const ProgressBar = styled.div`
+//   width: 170px;
+//   height: 5px;
+//   background: rgba(68, 66, 179, 0.1);
+//   background-blend-mode: overlay;
+//   border-radius: 8px;
+// `
 
 const Description = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
   line-height: 16px;
+  padding-top: 10px;
   color: #192150;
 `
 

@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   z-index: 1;
   display: grid;
   gap: 10px;
-  grid-template-columns: 150px;
+  grid-template-columns: 200px;
   transition: 0.3s ease-in-out;
   /* display: ${props => (props.isOpen ? "block" : "none")}; */
   visibility: ${props => (props.isOpen ? "visible" : "hidden")};

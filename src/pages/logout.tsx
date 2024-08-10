@@ -23,7 +23,7 @@ const Aboutpage = ({ data }) => {
   return (
     <Layout>
       <AboutLayout>
-        <Seo title="CORNFIELD" />
+        <Seo title="Taming the Dim Light" />
         <WaveBackground />
         <Wrapper>
           <HeroWrapper>

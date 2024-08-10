@@ -8,24 +8,24 @@ export const menuData = [
 ]
 
 export const tooltipData = [
-  {
-    title: "Challenge",
-    icon: "/images/icons/cube.svg",
-    link: "/profile",
-    alt: "challenge",
-  },
+  // {
+  //   title: "Challenge",
+  //   icon: "/images/icons/cube.svg",
+  //   link: "/profile",
+  //   alt: "challenge",
+  // },
 
   {
-    title: "About",
+    title: "תקציר",
     icon: "/images/icons/cube.svg",
     link: "/about",
-    alt: "courses",
+    alt: "תקציר",
   },
 
   {
-    title: "Calendar",
+    title: "אודות המחבר",
     icon: "/images/icons/cube.svg",
     link: "/calendar",
-    alt: "calendar",
+    alt: "אודות המחבר",
   },
 ]

@@ -14,10 +14,10 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: ``,
-    description: `100 Trades Challenge`,
+    description: `Taming the Dim Light`,
     author: `@MyDesign`,
     // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-    keywords: ` commodity, trading challenge, trading`,
+    keywords: `vlady antonevicz, Taming the Dim Light`,
     image:
       "https://searchengineland.com/wp-content/seloads/2017/01/devtools-search-canonical-800x495.png",
   },
@@ -71,7 +71,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/logos/paw.png`, // This path is relative to the root of the site.
+        icon: `static/images/logos/logo_min.png`, // This path is relative to the root of the site.
       },
     },
     // `gatsby-plugin-gatsby-cloud`,

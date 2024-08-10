@@ -21,10 +21,11 @@ const Wrapper = styled.div`
   max-width: 800px;
   min-height: 500px;
   margin: 0 auto;
-  text-align: start;
+  /* text-align: start; */
   padding: 0px 20px;
   color: #010953;
   text-align: justify;
+  direction: rtl;
 
   @media (max-width: 780px) {
     max-width: 470px;

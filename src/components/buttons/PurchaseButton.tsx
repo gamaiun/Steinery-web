@@ -5,12 +5,12 @@ function PurchaseButton() {
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon src="/images/logos/paw.png" alt="button_icon_alt" />
+        <Icon src="/images/logos/logo_w.png" alt="button_icon_alt" />
         {/* <Ring src="/images/icons/icon-ring.svg" alt="button_ring_alt" /> */}
       </IconWrapper>
       <TextWrapper>
-        <Title>Subscribe</Title>
-        <Subtitle>to our monthly newsletter</Subtitle>
+        <Title>לרכישת הספר</Title>
+        {/* <Subtitle>to our monthly newsletter</Subtitle> */}
       </TextWrapper>
     </Wrapper>
   )
@@ -58,8 +58,8 @@ const TextWrapper = styled.div`
 const Title = styled.p`
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
-  color: #4a67c6;
+  font-size: 21px;
+  color: rgb(97, 121, 200);
   text-transform: uppercase;
 `
 

@@ -95,7 +95,7 @@ const AppContainer = styled.div`
 const App = ({ points, trades }) => {
   return (
     <AppContainer>
-      <ChartContent points={points} trades={trades} />
+      {/* <ChartContent points={points} trades={trades} /> */}
     </AppContainer>
   )
 }

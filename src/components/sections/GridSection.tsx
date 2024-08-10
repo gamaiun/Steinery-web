@@ -2,11 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import SectionRow from "../rows/SectionRow"
+import { direction } from "direction"
 
 function GridSection(props) {
   const { sections } = props
+  // Determine text direction for the entire sections
+  const overallDirection =
+    sections.length > 0 ? direction(sections[0].description) : "ltr"
+
   return (
-    <Wrapper>
+    <Wrapper dir={overallDirection}>
       <Title> </Title>
       <Description></Description>
       <Grid>
@@ -14,9 +19,8 @@ function GridSection(props) {
           <Link to={`/${section.slug}`} key={index}>
             <SectionRow
               index={index + 1}
-              // title={section.title}
               description={section.description}
-              points={section.resultPoints}
+              // points={section.resultPoints}
             />
           </Link>
         ))}
@@ -36,6 +40,7 @@ const Wrapper = styled.div`
   gap: 0;
   padding: 0 20px;
   padding-bottom: 0px;
+  direction: ${props => props.dir};
 `
 
 const Title = styled.p`
@@ -67,6 +72,86 @@ const Grid = styled.div`
   backdrop-filter: blur(40px);
   border-radius: 20px;
 `
+
+// import React from "react"
+// import styled from "styled-components"
+// import { Link } from "gatsby"
+// import SectionRow from "../rows/SectionRow"
+// import { direction } from "direction"
+
+// function GridSection(props) {
+//   const { sections } = props
+//   return (
+//     <Wrapper>
+//       <Title> </Title>
+//       <Description></Description>
+//       <Grid>
+//         {sections.map((section, index) => {
+//           const textDirection = direction(section.description)
+//           return (
+//             <Link to={`/${section.slug}`} key={index}>
+//               <SectionRowWrapper dir={textDirection}>
+//                 <SectionRow
+//                   index={index + 1}
+//                   // title={section.title}
+//                   description={section.description}
+//                   points={section.resultPoints}
+//                 />
+//               </SectionRowWrapper>
+//             </Link>
+//           )
+//         })}
+//       </Grid>
+//     </Wrapper>
+//   )
+// }
+
+// export default GridSection
+
+// const Wrapper = styled.div`
+//   position: relative;
+//   display: grid;
+//   max-width: 1234px;
+//   margin: 0 auto;
+//   text-align: center;
+//   gap: 0;
+//   padding: 0 20px;
+//   padding-bottom: 0px;
+// `
+
+// const Title = styled.p`
+//   font-style: normal;
+//   font-size: 15px;
+//   line-height: 130%;
+//   text-transform: uppercase;
+//   color: #351e00;
+// `
+
+// const Description = styled.p`
+//   max-width: 460px;
+//   font-size: 13px;
+//   line-height: 130%;
+//   color: rgba(0, 0, 0, 0.7);
+//   margin: 0 auto;
+// `
+
+// const Grid = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   gap: 8px;
+//   width: 100%;
+//   padding: 20px;
+//   background: linear-gradient(200.44deg, #daccfa 20.57%, #b2c5fe 66.38%);
+//   border: 0.5px solid rgba(255, 255, 255, 0.6);
+//   box-sizing: border-box;
+//   box-shadow: 0px 50px 100px rgba(34, 79, 169, 0.3);
+//   backdrop-filter: blur(40px);
+//   border-radius: 20px;
+// `
+
+// const SectionRowWrapper = styled.div`
+//   direction: ${props => props.dir};
+// `
 
 // import React, { useState, useEffect } from "react"
 // import styled from "styled-components"

@@ -12,71 +12,44 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 
 const Aboutpage = ({ data }) => {
-  // const description = data.allContentfulCourse.edges[0].node.description
-
-  // const illustration =
-  //   data.allContentfulCourse.nodes[0]?.illustration?.file?.url
-
-  // const sections = data.allContentfulCourse.edges[0].node.sections
-
   return (
     <Layout>
       {/* <AboutLayout> */}
-      <Seo title="100 Trades Challenge" />
+      <Seo title="תקציר  " />
 
       <Wrapper>
         <HeroWrapper>
           <Text>
-            <Title>Why I write this blog?</Title>
-            Following seasoned traders, I've observed that accountability, often
-            as straightforward as a systematic public display of trading
-            results, prompts better decision-making and trade justifications.
-            Impulses struggle to justify themselves on paper (or a blog), let
-            alone on a trading account balance. This trading journal is a
-            transparent showcase of my actions, smart and (mostly) stupid as I
-            take the 100 trades challenge. While I don't unveil specific
-            indicators nor their construction (mostly for your own financial
-            safety, as most of them won't work and none of them will work all
-            the time), you can easily reverse engineer my approach (if you wish
-            to do so) and test it on a demo. Most importantly - learn from my
-            mistakes. I urge you to research, experiment, and embrace
-            accountability in your trading odyssey (and life).
-            <br></br>
-            Learn to swim, then to surf. Otherwise, stay on the shore. Any
-            romantic notion of easy money will lead you into the abyss of
-            financial disaster.
-            <br></br>
-            <br></br>
-            <h2>My Trading Philosophy</h2>
-            My initial trading philosophy (hypothesis?) can be summed up in a
-            single sentence. Beyond that, everything is my persistent (but
-            mostly futile) effort to validate it. I know it, I feel it, it makes
-            sense to me. And if that assurance isn't enough, Jim Simons, the
-            Godfather of algorithmic trading, swears by this axiom.
-            <br></br>
-            <br></br>
-            Here it is: <strong>The markets are not perfect.</strong> Period.
-            <br></br>
-            <br></br>
-            My sole responsibility is to identify and exploit these
-            imperfections. <br></br>
-            <br></br>
-            <br></br>
-            <Signature>
-              <img src="/images/icons/lazyFarmer.png" alt="LazyFarmer" />
-            </Signature>
+            <Title>A Whisper in the Rain</Title>
+            In A Whisper in the Rain, two souls destined to meet find themselves
+            in the quaint town of Everwood. When Emma, a quiet bookstore owner
+            with a past she's trying to forget, meets Lucas, a mysterious artist
+            with secrets of his own, sparks fly against the backdrop of a town
+            known for its endless rain. As they navigate their growing feelings,
+            they must confront the shadows of their pasts. Love, redemption, and
+            the healing power of trust take center stage in this heartwarming
+            romantic journey.
           </Text>
         </HeroWrapper>
-        <Footer />
       </Wrapper>
-      {/* </AboutLayout> */}
     </Layout>
   )
 }
 export default Aboutpage
 
 const Wrapper = styled.div`
-  background: linear-gradient(200.44deg, #6494e9 30.57%, #ffffff 90.38%);
+  padding-bottom: 100px;
+  background: linear-gradient(
+    180deg,
+    #6494e9 0%,
+    #ffffff 100%
+  ); /* Adjusted angle and stops */
+
+  @media (min-width: 780px) {
+    padding-bottom: 200px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 `
 
 const Title = styled.h1`
@@ -86,27 +59,36 @@ const Title = styled.h1`
   font-size: 30px;
   text-transform: uppercase;
   line-height: 62px;
-  color: #e9e99f;
+  color: #1e3c6d;
+  padding-bottom: 50px;
+
+  text-align: center;
+
   mix-blend-mode: normal;
   @media (max-width: 780px) {
     max-width: 500px;
+    padding-bottom: 10px;
     font-size: 20px;
     font-weight: bold;
   }
 `
 
 const Text = styled.h5`
-  max-width: 500px;
+  max-width: 600px;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 30px;
   color: #011367;
   mix-blend-mode: normal;
+  color: #010953;
   text-align: justify;
+  direction: rtl;
   @media (max-width: 780px) {
-    max-width: 300px;
+    max-width: 350px;
     font-size: 15px;
+    font-size: 17px;
+    line-height: 30px;
   }
 `
 
@@ -118,10 +100,10 @@ const Signature = styled(Link)`
 
 const HeroWrapper = styled.div`
   display: grid;
-  max-width: 1234px;
-  grid-template-columns: 360px 1;
-  gap: 60px;
-  padding: 135px 20px 0px;
+  max-width: 500px;
+  /* grid-template-columns: 360px 1; */
+  /* gap: 60px; */
+  padding: 135px 10px 0px;
   justify-content: center;
   margin: 0 auto;
 
@@ -131,6 +113,8 @@ const HeroWrapper = styled.div`
 
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
+    justify-content: center;
+
     justify-items: center;
   }
 `
